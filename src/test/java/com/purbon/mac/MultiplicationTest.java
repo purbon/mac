@@ -21,6 +21,9 @@ public class MultiplicationTest {
 
        var r = multi.times(a, b);
        assertThat(r).isEqualTo(20);
+
+        var r2 = multi.times2(a, b);
+        assertThat(r2).isEqualTo(20);
     }
 
     @Test
@@ -30,6 +33,9 @@ public class MultiplicationTest {
 
        var r = multi.times(a, b);
        assertThat(r).isEqualTo(1080);
+
+        var r2 = multi.times2(a, b);
+        assertThat(r2).isEqualTo(1080);
     }
 
     @Test
@@ -37,7 +43,17 @@ public class MultiplicationTest {
         int[] a = new int[]{2, 3, 9, 5, 8, 2, 3, 3};
         int[] b = new int[]{5, 8, 3, 0};
 
+        var time = System.nanoTime();
         var r = multi.times(a, b);
+        time = System.nanoTime() - time;
         assertThat(r).isEqualTo(139676498390L);
+        System.out.println("Times V1 (ns): " + time);
+
+        time = System.nanoTime();
+        var r2 = multi.times2(a, b);
+        time = System.nanoTime() - time;
+        assertThat(r2).isEqualTo(139676498390L);
+        System.out.println("Times V2 (ns): " + time);
+
     }
 }

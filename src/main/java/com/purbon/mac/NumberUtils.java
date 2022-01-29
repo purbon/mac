@@ -10,6 +10,14 @@ public class NumberUtils {
         return r;
     }
 
+    public static long asLong(int[] a) {
+        long r = 0;
+        for(int i=a.length-1; i>=0; i--) {
+            r += a[i]*(long)Math.pow(10, a.length-1-i);
+        }
+        return r;
+    }
+
     public static int[] asIntArray(int a) {
         int size = (int)Math.log10(a)+1;
         int[] r = new int[size];
@@ -19,5 +27,4 @@ public class NumberUtils {
         }
         return r;
     };
-
 }
