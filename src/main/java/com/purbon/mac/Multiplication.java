@@ -8,7 +8,6 @@ public class Multiplication {
 
     public long times(int[] a, int[] b) {
         long total = 0;
-        int order = 0;
         for(int i=b.length-1; i>=0; i--) {
             long mVal = 0;
             int carry = 0;
@@ -17,12 +16,11 @@ public class Multiplication {
                 mVal  += (op % 10)*(long) Math.pow(10, a.length-1-j);
                 carry  = op / 10;
             }
-            mVal *= (int) Math.pow(10, order);
+            mVal *= (long) Math.pow(10, b.length-1-i);
             if (carry != 0) {
-                mVal += (carry * (long) Math.pow(10, a.length+order));
+                mVal += (carry * (long) Math.pow(10, a.length+b.length-1-i));
             }
             total += mVal;
-            order += 1;
         }
         return total;
     }
