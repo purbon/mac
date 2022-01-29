@@ -10,4 +10,14 @@ public class NumberUtils {
         return r;
     }
 
+    public static int[] asIntArray(int a) {
+        int size = (int)Math.log10(a)+1;
+        int[] r = new int[size];
+        for(int i=1; i <= size; i++) {
+            r[size-i] = a % 10;
+            a = a / 10;
+        }
+        return r;
+    };
+
 }
