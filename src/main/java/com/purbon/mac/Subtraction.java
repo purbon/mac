@@ -1,5 +1,7 @@
 package com.purbon.mac;
 
+import static com.purbon.mac.NumberUtils.asInt;
+
 public class Subtraction {
 
     public Subtraction() {
@@ -13,14 +15,6 @@ public class Subtraction {
             return doMinus(b, a) * -1;
         }
         return doMinus(a, b);
-    }
-
-    private int asInt(int[] a) {
-        int r = 0;
-        for(int i=a.length-1; i>=0; i--) {
-            r += a[i]*(int)Math.pow(10, a.length-1-i);
-        }
-        return r;
     }
 
     private int doMinus(int[] a, int[] b) {
