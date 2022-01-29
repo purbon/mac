@@ -1,5 +1,7 @@
 package com.purbon.mac;
 
+import java.util.BitSet;
+
 public class Division {
 
     public Division() {
@@ -35,5 +37,21 @@ public class Division {
             r -= d;
         }
         return new Tuple<>(q, r);
+    }
+
+    public Tuple<Integer, Integer> nonRestoring(int n, int d) {
+        int r = n;
+        d = d << 32;
+        BitSet bs = new BitSet(32);
+        for( int i=32-1; i >= 0; i-- ) {
+            if (r >= 0) {
+                bs.set(i, false);
+                r = 2 * r - d;
+            } else {
+                bs.set(i, true);
+                r = 2 * r + d;
+            }
+        }
+        return new Tuple<>((int)bs.toLongArray()[0], r);
     }
 }
