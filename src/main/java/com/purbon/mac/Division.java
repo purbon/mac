@@ -1,5 +1,7 @@
 package com.purbon.mac;
 
+import com.purbon.mac.utils.Tuple;
+
 import java.util.BitSet;
 
 public class Division {
@@ -21,14 +23,14 @@ public class Division {
     public Tuple<Integer, Integer> div(int n, int d) {
         if (d < 0) {
             var t = div(n, -d);
-            return new Tuple<>(-1 * t.left, t.right);
+            return new Tuple<>(-1 * t.getLeft(), t.getRight());
         }
         if (n < 0) {
             var t = div(-n, d);
-            if (t.right == 0) {
-                return new Tuple<>(t.left, 0);
+            if (t.getRight() == 0) {
+                return new Tuple<>(t.getLeft(), 0);
             } else {
-                return new Tuple<>(-1 * t.left -1, d - t.right);
+                return new Tuple<>(-1 * t.getLeft() -1, d - t.getRight());
             }
         }
         int q = 0; int r = n;

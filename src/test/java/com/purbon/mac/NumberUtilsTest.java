@@ -1,5 +1,6 @@
 package com.purbon.mac;
 
+import com.purbon.mac.utils.NumberUtils;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;

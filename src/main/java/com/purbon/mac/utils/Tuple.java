@@ -1,4 +1,4 @@
-package com.purbon.mac;
+package com.purbon.mac.utils;
 
 public class Tuple<K, V> {
     K left;
@@ -7,5 +7,13 @@ public class Tuple<K, V> {
     public Tuple(K left, V right) {
         this.left = left;
         this.right = right;
+    }
+
+    public K getLeft() {
+        return left;
+    }
+
+    public V getRight() {
+        return right;
     }
 }

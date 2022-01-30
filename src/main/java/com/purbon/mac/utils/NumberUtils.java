@@ -1,4 +1,4 @@
-package com.purbon.mac;
+package com.purbon.mac.utils;
 
 public class NumberUtils {
 

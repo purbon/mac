@@ -1,6 +1,5 @@
 package com.purbon.mac;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -30,21 +29,21 @@ public class DivisionTest {
     @Test
     public void longDivisionShouldReturnOk() {
         var r = div.div(5, 2);
-        assertThat(r.left).isEqualTo(2);
-        assertThat(r.right).isEqualTo(1);
+        assertThat(r.getLeft()).isEqualTo(2);
+        assertThat(r.getRight()).isEqualTo(1);
 
         var r2 = div.div(4, 2);
-        assertThat(r2.left).isEqualTo(2);
-        assertThat(r2.right).isEqualTo(0);
+        assertThat(r2.getLeft()).isEqualTo(2);
+        assertThat(r2.getRight()).isEqualTo(0);
 
         var r3 = div.div(7, 3);
-        assertThat(r3.left).isEqualTo(2);
-        assertThat(r3.right).isEqualTo(1);
+        assertThat(r3.getLeft()).isEqualTo(2);
+        assertThat(r3.getRight()).isEqualTo(1);
     }
 
     public void nonRestoringDivisionShouldReturnOk() {
         var r = div.nonRestoring(5, 2);
-        assertThat(r.left).isEqualTo(2);
-        assertThat(r.right).isEqualTo(1);
+        assertThat(r.getLeft()).isEqualTo(2);
+        assertThat(r.getRight()).isEqualTo(1);
     }
 }

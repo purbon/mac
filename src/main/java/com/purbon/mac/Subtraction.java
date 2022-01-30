@@ -1,6 +1,6 @@
 package com.purbon.mac;
 
-import static com.purbon.mac.NumberUtils.asInt;
+import static com.purbon.mac.utils.NumberUtils.asInt;
 
 public class Subtraction {
 

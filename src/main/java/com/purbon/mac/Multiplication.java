@@ -1,6 +1,6 @@
 package com.purbon.mac;
 
-import static com.purbon.mac.NumberUtils.asLong;
+import static com.purbon.mac.utils.NumberUtils.asLong;
 
 public class Multiplication {
 
